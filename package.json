@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-plugin-typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.0",
+    "aws-lambda": "^1.0.7",
+    "axios": "^1.6.8",
+    "google-translate-api": "^2.3.0",
+    "inversify": "^6.0.2"
+  }
+}

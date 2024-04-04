@@ -1,0 +1,29 @@
+service: backend
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+custom:
+  serverless-plugin-typescript:
+    include:
+      - src/functions/**/*.ts
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: src/api-translator/functions/starwars/handler.getExternalDataPeople
+    timeout: 30
+    events:
+      - httpApi:
+          path: /data
+          method: get
+    environment:
+      SWAPI_URL: ${file(./config.${opt:stage}.json):SWAPI_URL}
